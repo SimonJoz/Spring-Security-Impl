@@ -1,0 +1,23 @@
+server:
+  port: 1111
+
+spring:
+  profiles:
+    active: inMemorySecurity
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+
+# Profiles:  inMemorySecurity, jdbcSecurity

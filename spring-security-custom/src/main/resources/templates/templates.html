@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Templates</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="author" content="Simon Joz"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+</head>
+<body class="bg-secondary">
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+
+        <main>
+            <div class="container">
+                <div class="row justify-content-end">
+                    <form action="/logout" method="post">
+                        <a role="button" href="/logout" class="btn btn-primary m-5">Log out</a>
+                    </form>
+                </div>
+                <div th:each="template : ${templates}">
+                    <div class="row justify-content-center my-1">
+                        <div class="col-6 alert-dark py-3 text-center" th:text="${template}"></div>
+                    </div>
+                </div>
+                <form action="/add-template" method="post">
+                    <div class="row justify-content-center my-3">
+                        <button class="col-6 btn btn-warning">Add template</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <footer class="py-3 bg-dark shadow">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-center small">
+                <div class="text-muted">Copyright &copy; Simon Joz 2020</div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
